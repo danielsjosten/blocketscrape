@@ -3,7 +3,7 @@ require 'open-uri'
 require 'nokogiri'
 require 'openssl'
 
-require 'C:\Users\Daniel\RubymineProjects\untitled4\mailer2.rb'
+require 'C:\Users\Daniel\Documents\blocketscrape\mailer2.rb'
 
 page_nr = 1
 
@@ -67,6 +67,8 @@ Glad påsk önskar teamet bakom dansjomailerJOBB
 Vill du avprenumerera? Ring dansjomailer's kundtjänst på 0771-123 456 00
 
 EOF
+
+puts "Sending mail"
 
 mailer = SMTPGoogleMailer.new
 mailer.send_plain_email 'dansjomailer@gmail.com', 'dansjo_87@hotmail.com', doc.css('div h2')[0].text.strip, mailtext
