@@ -23,7 +23,6 @@ job_list = doc.css('[id="article-list"]').css('.job-item')
 jobb = []
 
 #Lägg in och kolla om sökningen får flera sidor och loopa igenom dessa och ta ut denna data
-
 job_list.each do |item|
 
   rubrik =        item.css('.content a')[0].text.strip
