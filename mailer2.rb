@@ -20,6 +20,9 @@ EOF
     send_email from, to, mailtext
   end
 
+
+
+  
   private
   def send_email from, to, mailtext
 

@@ -43,12 +43,11 @@ job_list.each do |item|
 
 end
 
-puts doc.css('div h2')[0].text.strip
+#167 lediga jobb – hr i Stockholms stad
+@mailSubject =  doc.css('div h2')[0].text.strip
 
 
 puts "Antal hittade jobb som matchade sökningen: #{jobb.count}\n\n"
-
-
 
 mailtext = "Totalt " + doc.css('div h2')[0].text.strip + "\n\nVi visar #{jobb.count} av dem."
 mailtext << "\n"
@@ -70,4 +69,4 @@ EOF
 puts "Sending mail"
 
 mailer = SMTPGoogleMailer.new
-mailer.send_plain_email 'dansjomailer@gmail.com', 'dansjo_87@hotmail.com', doc.css('div h2')[0].text.strip, mailtext
+mailer.send_plain_email 'dansjomailer@gmail.com', 'dansjo_87@hotmail.com', @mailSubject, mailtext
